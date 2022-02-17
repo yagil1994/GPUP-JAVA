@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>servlets.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserTableViewServlet</servlet-name>
+        <url-pattern>/UserTableViewServlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>UserTableViewServlet</servlet-name>
+        <servlet-class>servlets.UserTableViewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UploadXmlFile</servlet-name>
+        <servlet-class>servlets.UploadXmlFile</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadXmlFile</servlet-name>
+        <url-pattern>/UploadXmlFile</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StartAppServlet</servlet-name>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StartAppServlet</servlet-name>
+        <url-pattern>/StartAppServlet</url-pattern>
+    </servlet-mapping>
+    <listener>
+        <listener-class>servlets.StartAppServlet</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>GraphListServlet</servlet-name>
+        <servlet-class>servlets.GraphListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GraphListServlet</servlet-name>
+        <url-pattern>/GraphListServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GraphInfoDtoServlet</servlet-name>
+        <servlet-class>servlets.GraphInfoDtoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GraphInfoDtoServlet</servlet-name>
+        <url-pattern>/GraphInfoDtoServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TargetInfoForTableViewDtoServlet</servlet-name>
+        <servlet-class>servlets.TargetInfoForTableViewDtoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TargetInfoForTableViewDtoServlet</servlet-name>
+        <url-pattern>/TargetInfoForTableViewDtoServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TargetInfoDtoServlet</servlet-name>
+        <servlet-class>servlets.TargetInfoDtoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TargetInfoDtoServlet</servlet-name>
+        <url-pattern>/TargetInfoDtoServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>TargetInfoForTableViewDtoArrayServlet</servlet-name>
+        <servlet-class>servlets.TargetInfoForTableViewDtoArrayServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TargetInfoForTableViewDtoArrayServlet</servlet-name>
+        <url-pattern>/TargetInfoForTableViewDtoArrayServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CirclePathForTargetDto</servlet-name>
+        <servlet-class>servlets.CirclePathForTargetDto</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CirclePathForTargetDto</servlet-name>
+        <url-pattern>/CirclePathForTargetDto</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AllDependenciesOfTargetDto</servlet-name>
+        <servlet-class>servlets.AllDependenciesOfTargetDto</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AllDependenciesOfTargetDto</servlet-name>
+        <url-pattern>/AllDependenciesOfTargetDto</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AllPathsOfTwoTargetsDto</servlet-name>
+        <servlet-class>servlets.AllPathsOfTwoTargetsDto</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AllPathsOfTwoTargetsDto</servlet-name>
+        <url-pattern>/AllPathsOfTwoTargetsDto</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetAllTargetsNamesInStrArr</servlet-name>
+        <servlet-class>servlets.GetAllTargetsNamesInStrArr</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllTargetsNamesInStrArr</servlet-name>
+        <url-pattern>/GetAllTargetsNamesInStrArr</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetTargetsNamesInGraphTaskOnly</servlet-name>
+        <servlet-class>servlets.GetTargetsNamesInGraphTaskOnly</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetTargetsNamesInGraphTaskOnly</servlet-name>
+        <url-pattern>/GetTargetsNamesInGraphTaskOnly</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetGraphPricePerTargetAccordingToTaskType</servlet-name>
+        <servlet-class>servlets.GetGraphPricePerTargetAccordingToTaskType</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetGraphPricePerTargetAccordingToTaskType</servlet-name>
+        <url-pattern>/GetGraphPricePerTargetAccordingToTaskType</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SendNewMissionToServer</servlet-name>
+        <servlet-class>servlets.SendNewMissionToServer</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SendNewMissionToServer</servlet-name>
+        <url-pattern>/SendNewMissionToServer</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdminTasksRows</servlet-name>
+        <servlet-class>servlets.AdminTasksRows</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminTasksRows</servlet-name>
+        <url-pattern>/AdminTasksRows</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>WorkerTasksRows</servlet-name>
+        <servlet-class>servlets.WorkerTasksRows</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WorkerTasksRows</servlet-name>
+        <url-pattern>/WorkerTasksRows</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegisterWorkerToTasks</servlet-name>
+        <servlet-class>servlets.RegisterWorkerToTasks</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterWorkerToTasks</servlet-name>
+        <url-pattern>/RegisterWorkerToTasks</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CheckIfThereIsWork</servlet-name>
+        <servlet-class>servlets.CheckIfThereIsWork</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckIfThereIsWork</servlet-name>
+        <url-pattern>/CheckIfThereIsWork</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ChangeMissionStatus</servlet-name>
+        <servlet-class>servlets.ChangeMissionStatus</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChangeMissionStatus</servlet-name>
+        <url-pattern>/ChangeMissionStatus</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateTargetInProcess</servlet-name>
+        <servlet-class>servlets.UpdateTargetInProcess</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateTargetInProcess</servlet-name>
+        <url-pattern>/UpdateTargetInProcess</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name> UpdateAfterTargetDidTask</servlet-name>
+        <servlet-class>servlets.UpdateAfterTargetDidTask</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateAfterTargetDidTask</servlet-name>
+        <url-pattern>/UpdateAfterTargetDidTask</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name> UpdateServerInTargetsThatDidNotDidTask</servlet-name>
+        <servlet-class>servlets.UpdateServerInTargetsThatDidNotDidTask</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateServerInTargetsThatDidNotDidTask</servlet-name>
+        <url-pattern>/UpdateServerInTargetsThatDidNotDidTask</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name> TellServerThatWorkerUnregisterMission</servlet-name>
+        <servlet-class>servlets.TellServerThatWorkerUnregisterMission</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TellServerThatWorkerUnregisterMission</servlet-name>
+        <url-pattern>/TellServerThatWorkerUnregisterMission</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name> UpdateAdminMissionData</servlet-name>
+        <servlet-class>servlets.UpdateAdminMissionData</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateAdminMissionData</servlet-name>
+        <url-pattern>/UpdateAdminMissionData</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name> UpdateAdminTargetsData</servlet-name>
+        <servlet-class>servlets.UpdateAdminTargetsData</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateAdminTargetsData</servlet-name>
+        <url-pattern>/UpdateAdminTargetsData</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name> UpdateLogsInfo</servlet-name>
+        <servlet-class>servlets.UpdateLogsInfo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateLogsInfo</servlet-name>
+        <url-pattern>/UpdateLogsInfo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name> UpdateTargetListViewDetails</servlet-name>
+        <servlet-class>servlets.UpdateTargetListViewDetails</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateTargetListViewDetails</servlet-name>
+        <url-pattern>/UpdateTargetListViewDetails</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AskForTaskReport</servlet-name>
+        <servlet-class>servlets.AskForTaskReport</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AskForTaskReport</servlet-name>
+        <url-pattern>/AskForTaskReport</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>RunMissionAgain</servlet-name>
+        <servlet-class>servlets.RunMissionAgain</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RunMissionAgain</servlet-name>
+        <url-pattern>/RunMissionAgain</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SendMessage</servlet-name>
+        <servlet-class>servlets.SendMessage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SendMessage</servlet-name>
+        <url-pattern>/SendMessage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateChat</servlet-name>
+        <servlet-class>servlets.UpdateChat</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateChat</servlet-name>
+        <url-pattern>/UpdateChat</url-pattern>
+    </servlet-mapping>
+
+</web-app>
+
+

@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact name="clientTools">
+    <output-path>$PROJECT_DIR$/out/artifacts/clientTools</output-path>
+    <root id="root">
+      <element id="archive" name="clientTools.jar">
+        <element id="module-output" name="clientTools" />
+      </element>
+      <element id="library" level="project" name="okHttp" />
+      <element id="library" level="project" name="gson-2.1" />
+    </root>
+  </artifact>
+</component>

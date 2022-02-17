@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact name="worker">
+    <output-path>$PROJECT_DIR$/out/artifacts/worker</output-path>
+    <root id="root">
+      <element id="archive" name="worker.jar">
+        <element id="module-output" name="worker" />
+        <element id="module-output" name="clientTools" />
+        <element id="module-output" name="dto" />
+        <element id="module-output" name="exception" />
+      </element>
+      <element id="library" level="project" name="okHttp" />
+      <element id="library" level="project" name="gson-2.1" />
+    </root>
+  </artifact>
+</component>

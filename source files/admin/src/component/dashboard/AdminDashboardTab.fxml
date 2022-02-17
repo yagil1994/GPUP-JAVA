@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="500.0" minViewportHeight="100.0" minViewportWidth="100.0" minWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="component.dashboard.AdminDashboardTabController">
+   <content>
+      <GridPane alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="500.0" minWidth="500.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" maxWidth="335.0" minWidth="0.0" prefWidth="5.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" prefWidth="1067.0" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="72.0" minWidth="0.0" prefWidth="5.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="234.0" minHeight="10.0" prefHeight="5.0" vgrow="NEVER" />
+            <RowConstraints maxHeight="234.0" prefHeight="40.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="234.0" minHeight="10.0" prefHeight="219.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="234.0" minHeight="10.0" prefHeight="198.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="341.0" minHeight="10.0" prefHeight="113.0" valignment="CENTER" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="249.99993896484375" minHeight="5.0" prefHeight="5.0" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="341.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <children>
+                  <Button fx:id="loadXmlBtn" mnemonicParsing="false" onAction="#loadXmlAction" prefHeight="49.0" prefWidth="225.0" text="Load XML" />
+                  <Label fx:id="loadStatusLabel" prefHeight="21.0" prefWidth="967.0" text="Load status: " />
+               </children>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <GridPane.margin>
+                  <Insets top="20.0" />
+               </GridPane.margin>
+            </VBox>
+            <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="729.0" minWidth="10.0" prefWidth="151.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="933.0" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <VBox>
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label text="Users:" />
+                           </children>
+                        </VBox>
+                        <TableView fx:id="userListTableView" prefHeight="200.0" prefWidth="256.0">
+                          <columns>
+                            <TableColumn fx:id="userNameColumn" prefWidth="89.99996948242188" text="User name" />
+                            <TableColumn fx:id="roleColumn" prefWidth="60.0" text="Role" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" GridPane.columnIndex="1">
+                     <content>
+                        <VBox>
+                           <children>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" text="Missions:" textAlignment="CENTER" />
+                                 </children>
+                              </VBox>
+                              <ScrollPane fitToHeight="true" fitToWidth="true" minWidth="929.0">
+                                 <content>
+                                    <TableView fx:id="adminPendingMissionsTableView">
+                                      <columns>
+                                          <TableColumn fx:id="selectedColumn" prefWidth="57.0" text="Selected" />
+                                        <TableColumn fx:id="missionNameColumn" prefWidth="88.0" text="Mission name" />
+                                          <TableColumn fx:id="taskGraphNameColumn" prefWidth="78.33331298828125" text="Graph name" />
+                                        <TableColumn fx:id="createdByColumn" prefWidth="84.66668701171875" text="Created by" />
+                                          <TableColumn prefWidth="363.33331298828125" text="Amount of targets in task relatively to:">
+                                             <columns>
+                                                <TableColumn fx:id="taskLeavesColumn" prefWidth="68.0" text="leaves" />
+                                                <TableColumn fx:id="taskIndependentsColumn" prefWidth="114.0" text="independents" />
+                                                <TableColumn fx:id="taskMiddlesColumn" prefWidth="64.0" text="middles" />
+                                                <TableColumn fx:id="taskRootsColumn" prefWidth="54.0" text="roots" />
+                                             </columns>
+                                          </TableColumn>
+                                          <TableColumn fx:id="totalTaskPriceColumn" prefWidth="98.6666259765625" text="Total task price" />
+                                          <TableColumn fx:id="missionStatusColumn" prefWidth="100.0" text="Mission status" />
+                                          <TableColumn fx:id="amountOfWorkersOnTaskColumn" prefWidth="105.0" text=" Workers on task" />
+                                      </columns>
+                                    </TableView>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </GridPane>
+            <GridPane GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER" spacing="20.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label contentDisplay="CENTER" text="Themes:" />
+                        <ToolBar>
+                           <items>
+                              <RadioButton fx:id="DefaultThemeRadioButton" mnemonicParsing="false" onAction="#setTheme" selected="true" text="Default">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="theme" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="DarkModeThemeRadioButton" mnemonicParsing="false" onAction="#setTheme" text="Dark mode" toggleGroup="$theme" />
+                              <RadioButton fx:id="BreezeModeThemeRadioButton" mnemonicParsing="false" onAction="#setTheme" text="Breeze mode" toggleGroup="$theme" />
+                           </items>
+                        </ToolBar>
+                     </children>
+                  </HBox>
+                  <HBox spacing="20.0">
+                     <children>
+                        <HBox spacing="5.0">
+                           <children>
+                              <Label text="User name:" />
+                              <Label fx:id="userNameLabel" />
+                           </children>
+                        </HBox>
+                        <Label text="Role: Admin" />
+                        <Button mnemonicParsing="false" onAction="#onActionChatButton" prefHeight="25.0" prefWidth="80.0" text="Chat" />
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" GridPane.columnIndex="2">
+                     <children>
+                        <Label text="Run mission again" />
+                        <HBox alignment="CENTER">
+                           <children>
+                            <Button fx:id="runMissionAgainFromScratchButton" mnemonicParsing="false" onAction="#onActionFromScratchButton" text=" Scratch" />
+                              <Button fx:id="runMissionAgainFromIncrementButton" mnemonicParsing="false" onAction="#onActionIncrementalButton" text="Incremental" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+            <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="958.0" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="247.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ScrollPane fitToHeight="true" fitToWidth="true">
+                     <content>
+                        <VBox>
+                           <children>
+                              <VBox alignment="CENTER">
+                                 <children>
+                                    <Label text="Graphs:" />
+                                 </children>
+                              </VBox>
+                              <ScrollPane fitToHeight="true" fitToWidth="true" minWidth="835.0">
+                                 <content>
+                                    <TableView fx:id="availableGraphsTableView" onMouseClicked="#onClickedSelectedGraph" prefHeight="200.0" prefWidth="200.0">
+                                       <columns>
+                                          <TableColumn fx:id="graphNameColumn" prefWidth="103.99996948242188" text="Graph name" />
+                                          <TableColumn fx:id="uploadedByColumn" prefWidth="104.0" text="Uploaded by" />
+                                          <TableColumn prefWidth="318.0" text="Amount of targets relatively to:">
+                                             <columns>
+                                                <TableColumn fx:id="leavesColumn" prefWidth="68.0" text="leaves" />
+                                                <TableColumn fx:id="independentsColumn" prefWidth="114.0" text="independents" />
+                                                <TableColumn fx:id="middlesColumn" prefWidth="64.0" text="middles" />
+                                                <TableColumn fx:id="rootsColumn" prefWidth="54.0" text="roots" />
+                                             </columns>
+                                          </TableColumn>
+                                          <TableColumn fx:id="totalTargetsColumn" prefWidth="120.0" text="Total targets" />
+                                          <TableColumn fx:id="graphTasksPriceListColumn" prefWidth="180.0" text="price list per target">
+                                             <columns>
+                                                <TableColumn fx:id="simulationColumn" prefWidth="90.0" text="Simulation" />
+                                                <TableColumn fx:id="compilationColumn" prefWidth="100.0" text="Compilation" />
+                                             </columns>
+                                          </TableColumn>
+                                       </columns>
+                                    </TableView>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <VBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1">
+                     <children>
+                        <Label text="My missions" />
+                        <ListView fx:id="myMissionsListView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#onActionSelectedTask" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </content>
+</ScrollPane>

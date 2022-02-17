@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact name="admin">
+    <output-path>$PROJECT_DIR$/out/artifacts/admin</output-path>
+    <root id="root">
+      <element id="archive" name="admin.jar">
+        <element id="module-output" name="admin" />
+      </element>
+      <element id="library" level="project" name="okHttp" />
+      <element id="library" level="project" name="gson-2.1" />
+    </root>
+  </artifact>
+</component>
