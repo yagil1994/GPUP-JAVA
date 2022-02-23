@@ -27,6 +27,7 @@ public class WorkerTasksRows extends HttpServlet {
             allTasksInfo[i] = e.getValue().getWorkerPendingMissionsTableViewDto(workerName);
             i++;
         }
+        response.setStatus(HttpServletResponse.SC_OK);
         String json = gson.toJson(allTasksInfo);
         out.println(json);
         out.flush();

@@ -11,4 +11,6 @@ public class Constants {
     public static final String RUN_MISSION_AGAIN_TYPE= "runMissionAgainType";
     public static final String USER_MESSAGE = "userMessage";
     public static final String CHAT_VERSION_PARAMETER = "chatVersion";
+    public static final String THREADS_AMOUNT = "threadsAmount";
+
 }

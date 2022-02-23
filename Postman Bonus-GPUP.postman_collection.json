@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "dca201db-da99-498b-89f5-113d278638bc",
+		"name": "Postman Bonus-GPUP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign in a worker",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/app/RegisterWorkerFromPostMan?username=&threadsAmount=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"RegisterWorkerFromPostMan"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": ""
+						},
+						{
+							"key": "threadsAmount",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of users and their role",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/app/UsersListAndRolesToPostman",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"UsersListAndRolesToPostman"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of mission to do",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/app/WorkerTasksRowsToPostman?username=yagil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"WorkerTasksRowsToPostman"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "yagil"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register to Task",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/app/RegisterWorkerToTasksFromPostman?username=yagil&missionName=t1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"RegisterWorkerToTasksFromPostman"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "yagil"
+						},
+						{
+							"key": "missionName",
+							"value": "t1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get available targets To a mission",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/app/GetAvailableTargetsToMissionInPostman?username=yagil&missionName=t1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"GetAvailableTargetsToMissionInPostman"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "yagil"
+						},
+						{
+							"key": "missionName",
+							"value": "t1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update The server in a process result of a mission",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/app/UpdateAfterTargetDidTaskInPostman?targetName=&missionName=&runningResult=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"UpdateAfterTargetDidTaskInPostman"
+					],
+					"query": [
+						{
+							"key": "targetName",
+							"value": ""
+						},
+						{
+							"key": "missionName",
+							"value": ""
+						},
+						{
+							"key": "runningResult",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unregister a mission",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/app/TellServerThatWorkerUnregisterMission?username=&missionName=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"app",
+						"TellServerThatWorkerUnregisterMission"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": ""
+						},
+						{
+							"key": "missionName",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

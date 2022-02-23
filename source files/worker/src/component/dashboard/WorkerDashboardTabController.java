@@ -176,9 +176,6 @@ public class WorkerDashboardTabController {
 
         HttpClientUtil.runAsyncPost(finalUrl,body, new Callback() {
             @Override public void onFailure(@NotNull Call call, @NotNull IOException e) {
-//                    Platform.runLater(() ->
-//                            errorMessageProperty.set("Something went wrong: " + e.getMessage())
-//                    );
             }
 
             @Override public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
@@ -223,7 +220,6 @@ public class WorkerDashboardTabController {
         if(allSelectedTasksNames.isEmpty()){
             return;
         }
-        //sController.getInner().addMissions(allSelectedTasksNames);
         sController.getInner().addMissions(allSelectedRows);
         Gson gson = new Gson();
         String[] allSelectedTasksNamesInArr=new String[allSelectedTasksNames.size()];

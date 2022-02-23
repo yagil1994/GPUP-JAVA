@@ -59,9 +59,6 @@ public class WorkerSuperController {
     public Scene getChatScene(){return chatScene;}
 
     public String getWorkerUserName(){return workerUserName;}
-    public Integer getAmountOfTotalThreadsInPool() {return workerThreadPoolManager.getAmountOfTotalThreadsInPool();}
-    public Integer getAmountOfBusyThreads() {return workerThreadPoolManager.getAmountOfBusyThreads();}
-    public Integer getAmountOfAvailableThreads() {return workerThreadPoolManager.getAmountOfAvailableThreads();}
     public WorkerThreadPoolManager getWorkerThreadPoolManager(){return workerThreadPoolManager;}
 
     public void pauseMission(String missionName){

@@ -192,8 +192,23 @@ public abstract class AbstractTaskManager implements Serializable {
         }
         return true;
     }
+    synchronized public void updateThatTargetRunningStateIsFinishedFromPostman(String runningResult,String targetName) {
+        Target t = g.findTargetByName(targetName);
+        RunningResult targetRunningResult = RunningResult.SUCCESS;
+        if(runningResult.equals(RunningResult.FAILURE.toString())){
+            targetRunningResult=RunningResult.FAILURE;
+        }
+        else if(runningResult.equals(RunningResult.WARNING.toString())){
+            targetRunningResult=RunningResult.WARNING;
+        }
+        targetRunningResultMap.put(t, targetRunningResult);
+        targetRunningStateMap.put(t, RunningState.FINISHED);
+        if (!runningTargetsThatAlreadyFinishedOrSkippedMap.contains(t)) {
+            runningTargetsThatAlreadyFinishedOrSkippedMap.add(t);
+        }
+        setFirstTime(false);
+    }
     synchronized public void updateThatTargetRunningStateIsFinished(UpdateTargetStatusDuringTaskDto dto, FileWriter targetFile) {
-        //todo put synchronized in specific place only
         Target t = g.findTargetByName(dto.getTargetName());
         RunningResult targetRunningResult = RunningResult.SUCCESS;
         if(dto.getNewStatusOnTask().equals(RunningResult.FAILURE.toString())){

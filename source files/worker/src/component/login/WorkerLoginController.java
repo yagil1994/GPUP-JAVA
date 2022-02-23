@@ -28,16 +28,15 @@ import java.net.URL;
 import java.util.Objects;
 
 public class WorkerLoginController {
-    @FXML
-    private TextField userNameTextField;
+    @FXML private TextField userNameTextField;
     @FXML private Button loginButton;
     @FXML private Label loginErrorLabel;
+    @FXML private Slider threadsAmountSlider;
 
     private final StringProperty errorMessageProperty;
     private WorkerSuperController sController;
     private Stage primaryStage;
     private Scene sControllerScene;
-    @FXML private Slider threadsAmountSlider;
     private SimpleDoubleProperty amountOfThreadsProperty;
 
     public WorkerLoginController() {
@@ -82,8 +81,20 @@ public class WorkerLoginController {
                     );
                 }
                 else {
+                    String threadsAmount=null;
+                    try {
+                        threadsAmount = (response.body()).string();
+                    }
+                    catch (IOException ignore){}
+                    String finalThreadsAmount = threadsAmount;
                     Platform.runLater(() -> {
-                        sController.updateUserNameAndRoleAndThreads(userName,amountOfThreadsProperty.getValue());
+                        if(finalThreadsAmount !=null&&!finalThreadsAmount.equals("null")&&!finalThreadsAmount.equals("")) {
+                            int threadsAmountInteger= Integer.parseInt(finalThreadsAmount);
+                            sController.updateUserNameAndRoleAndThreads(userName, threadsAmountInteger);
+                        }
+                        else{
+                            sController.updateUserNameAndRoleAndThreads(userName,amountOfThreadsProperty.getValue());
+                        }
                         primaryStage.setScene(sControllerScene);
                         primaryStage.show();
                     });
@@ -93,7 +104,6 @@ public class WorkerLoginController {
         });
 
     }
-
     private void loadSuperScreen(){
         FXMLLoader fxmlLoader = new FXMLLoader();
         URL superScreenUrl = getClass().getResource("/component/supercontroller/WorkerSuperController.fxml");

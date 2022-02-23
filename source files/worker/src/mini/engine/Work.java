@@ -27,12 +27,7 @@ public class Work {
         try {
             targetFile = new FileWriter(fileName);
 
-//        synchronized (this) {
-//            uiAdapter.updateTargetStatusDuringTask(
-//                    new UpdateTargetStatusDuringTaskDto(u.getName(),targetRunningStateMap.get(u).toString(),"IN_PROCESS"));
-//            uiAdapter.updateThreadInfoDuringTask(createThreadInfoRow(theThreadManager));
             updateServerThatTargetIsInProcess(missionName,targetName);
-//        }
             String startWorkOnTarget = "Starting the task on target: " + targetName + "\n\n";
             targetFile.write(startWorkOnTarget);
             logsWriter.accept(startWorkOnTarget);
@@ -173,7 +168,7 @@ public class Work {
 
         Gson gson = new Gson();
         String jsonTargetStatusDuringTaskDto=gson.toJson(targetStatusDuringTaskDto);
-
+        System.out.println(jsonTargetStatusDuringTaskDto);
         String finalUrl=Constants.UPDATE_AFTER_TARGET_DID_TASK;
         RequestBody body =
                 new MultipartBody.Builder()

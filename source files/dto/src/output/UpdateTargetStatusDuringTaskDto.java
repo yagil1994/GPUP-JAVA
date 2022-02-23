@@ -1,13 +1,10 @@
 package output;
 
-import java.io.FileWriter;
-
 public class UpdateTargetStatusDuringTaskDto {
     //this class has two different usages:
     // #1 it helps the Worker send information to the server when a worker finishes an execution
     // #2 it uses as a "row" for updating a list view (probably in the Admin's class)
     private String targetName,prevStatusOnTask, newStatusOnTask,taskTime,missionName,taskType,fileName;
-    //private FileWriter targetFile;
     public UpdateTargetStatusDuringTaskDto(String targetNameIn,String prevStatusOnTaskIn,
                                            String newStatusOnTaskIn,String taskTimeIn,String missionNameIn
                                           ,String taskTypeIn,String fileNameIn){
@@ -16,7 +13,6 @@ public class UpdateTargetStatusDuringTaskDto {
         newStatusOnTask=newStatusOnTaskIn;
         taskTime=taskTimeIn;
         missionName=missionNameIn;
-        //targetFile=targetFileIn;
         taskType=taskTypeIn;
         fileName=fileNameIn;
     }

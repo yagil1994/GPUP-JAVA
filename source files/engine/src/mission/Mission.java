@@ -219,7 +219,7 @@ public class Mission {
             task.updateThatTargetRunningStateIsFinished(dto, targetFile);
             synchronized (this) {
                 if (task.isMissionDone()) {
-                    missionStatus = MISSION_STATUS.FINISHED;  // (think about the impacts on the admin side)
+                    missionStatus = MISSION_STATUS.FINISHED;
                     //end of mission
                     Mediator.TaskType theTaskType = Mediator.TaskType.SIMULATION;
                     if (taskType.equals("Compilation")) {
@@ -232,6 +232,17 @@ public class Mission {
         } catch (Exception ignore) {ignore.printStackTrace();}
         logs.add(getTargetLogs(dto.getTargetName()));
     }
+
+    public void updateThatTargetRunningStateIsFinishedInTaskFromPostman(String runningResult,String targetName){
+            task.updateThatTargetRunningStateIsFinishedFromPostman(runningResult, targetName);
+            synchronized (this) {
+                if (task.isMissionDone()) {
+                    missionStatus = MISSION_STATUS.FINISHED;
+                }
+                restartWaitingTargetsNamesMap();
+            }
+    }
+
     synchronized public List<String> getTaskReportStringList(){return taskReportStringList;}
     public TargetListViewDetails getTargetListViewDetails(String targetName){
         return task.getTargetListViewDetails(targetName);

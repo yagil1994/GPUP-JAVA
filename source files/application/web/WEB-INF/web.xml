@@ -305,6 +305,62 @@
         <url-pattern>/UpdateChat</url-pattern>
     </servlet-mapping>
 
+
+    <servlet>
+        <servlet-name>RegisterWorkerFromPostMan</servlet-name>
+        <servlet-class>servlets.RegisterWorkerFromPostMan</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterWorkerFromPostMan</servlet-name>
+        <url-pattern>/RegisterWorkerFromPostMan</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>UsersListAndRolesToPostman</servlet-name>
+        <servlet-class>servlets.UsersListAndRolesToPostman</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UsersListAndRolesToPostman</servlet-name>
+        <url-pattern>/UsersListAndRolesToPostman</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>WorkerTasksRowsToPostman</servlet-name>
+        <servlet-class>servlets.WorkerTasksRowsToPostman</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WorkerTasksRowsToPostman</servlet-name>
+        <url-pattern>/WorkerTasksRowsToPostman</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RegisterWorkerToTasksFromPostman</servlet-name>
+        <servlet-class>servlets.RegisterWorkerToTaskFromPostman</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterWorkerToTasksFromPostman</servlet-name>
+        <url-pattern>/RegisterWorkerToTasksFromPostman</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetAvailableTargetsToMissionInPostman</servlet-name>
+        <servlet-class>servlets.GetAvailableTargetsToMissionInPostman</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAvailableTargetsToMissionInPostman</servlet-name>
+        <url-pattern>/GetAvailableTargetsToMissionInPostman</url-pattern>
+    </servlet-mapping>
+    <servlet>
+
+        <servlet-name>UpdateAfterTargetDidTaskInPostman</servlet-name>
+        <servlet-class>servlets.UpdateAfterTargetDidTaskInPostman</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateAfterTargetDidTaskInPostman</servlet-name>
+        <url-pattern>/UpdateAfterTargetDidTaskInPostman</url-pattern>
+    </servlet-mapping>
+
 </web-app>
 
 
